@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Acerte o Verso</title>
+
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="js/main.js"></script>
+
+    </head>
+
+    <body>
+
+        <section>
+
+            <!-- <button id="comecar">COMEÇAR</button> -->
+
+        </section>
+
+        <section class="container">
+
+            <section class="verso">
+
+                <p id="blocoVerso"></p>
+
+            </section>
+
+            <section class="sectionAlternativas">
+
+                <button id="alternativa" class="opcao1" onclick="verificarResposta('opcao1')"></button>
+                <button id="alternativa" class="opcao2" onclick="verificarResposta('opcao2')"></button>
+                <button id="alternativa" class="opcao3" onclick="verificarResposta('opcao3')"></button>
+
+            </section>
+
+            <section class="sectioProximo">
+
+                <button id="next"  onclick="adicionarVerso()">PROXIMO</button>
+
+            </section>
+
+        </section>
+        
+    </body>
+
+</html>
