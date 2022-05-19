@@ -53,4 +53,31 @@ button {
     
     padding: 0.5rem 1rem;
 
+    border: 1px solid purple;
+
+    transition: 0.2s;
+
+    cursor: pointer;
+
+}
+
+button:hover {
+
+    background: #000;
+    color: white;
+
+}
+
+button.respostaErrada {
+
+    background: red;
+    color: white;
+
+}
+
+button.respostaCerta {
+
+    background: green;
+    color: white;
+
 }

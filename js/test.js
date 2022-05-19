@@ -1,22 +1,5 @@
-let allNumbers = []
+let array = [1, 2, 3, 4, 5];
 
-while (true) {
+let ultimo = array[array.length - 1];
 
-    let randomNumber = Math.floor(Math.random() * 20) + 1
-
-    if (!allNumbers.includes(randomNumber)) {
-
-        allNumbers.push(randomNumber)
-
-    }
-
-    console.log(randomNumber)
-    console.log(allNumbers)
-
-    if (allNumbers.length >= 20) {
-        
-        break
-
-    }
-
-}
+console.log(ultimo)

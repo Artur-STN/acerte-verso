@@ -156,81 +156,87 @@ function adicionarVerso() {
 
     var numberRandom = Math.floor(Math.random() * array.length)
 
-    while (true) {
+    // ENQUANTO A LISTA DE TODOS OS NÚMEROS ALEATORIOS FOR MENOR QUE 20,
+    // SERÁ ADICIONADA UM NOVO VERSO NA TELA
+    if (allNumbers.length < 20) {
 
-        if (!allNumbers.includes(numberRandom)) {
+        while (true) {
 
-            allNumbers.push(numberRandom)
+            if (!allNumbers.includes(numberRandom)) {
 
-            break
+                allNumbers.push(numberRandom)
+
+                break
+
+            }
+
+            if (allNumbers.includes(numberRandom)) {
+
+                numberRandom = Math.floor(Math.random() * array.length)
+
+            }
 
         }
 
-        if (allNumbers.includes(numberRandom)) {
+        console.log(allNumbers)
+        console.log(numberRandom)
 
-            numberRandom = Math.floor(Math.random() * array.length)
+        // VERSO APARECE NA TELA
+        let blocoVerso = document.getElementById("blocoVerso")
+
+        blocoVerso.innerHTML = array[numberRandom].verse
+
+        // ALTERNATIVAS APARECEM NA TELA
+        let allButtons = document.querySelectorAll("#alternativa")
+
+        shuffleArray(array[numberRandom].options)
+
+        for (let index = 0; index < allButtons.length; index++) {
+
+            if (allButtons[index].classList.contains("respostaCerta")) {
+
+                allButtons[index].classList.remove("respostaCerta")
+
+            }
+
+            if (allButtons[index].classList.contains("respostaErrada")) {
+
+                allButtons[index].classList.remove("respostaErrada")
+
+            }
+
+            allButtons[index].innerHTML = array[numberRandom].options[index]
 
         }
+
+    } else {
+
+        alert("ISSO É TUDO PESSOAL!")
 
     }
 
-    console.log(allNumbers)
-    console.log(numberRandom)
-
-    // VERSO APARECE NA TELA
-    let blocoVerso = document.getElementById("blocoVerso")
-
-    blocoVerso.innerHTML = array[numberRandom].verse
-
-    // ALTERNATIVAS APARECEM NA TELA
-
-    let allButtons = document.querySelectorAll("#alternativa")
-
-    shuffleArray(array[numberRandom].options)
-
-    for (let index = 0; index < allButtons.length; index++) {
-
-        if (allButtons[index].classList.contains("respostaCerta")) {
-
-            allButtons[index].classList.remove("respostaCerta")
-
-        } else if (allButtons[index].classList.contains("respostaErrada")) {
-
-            allButtons[index].classList.remove("respostaErrada")
-
-        }
-
-        allButtons[index].innerHTML = array[numberRandom].options[index]
-
-    }
-    
 }
 
 // FUNÇÃO QUE VERICA A RESPOSTA
 function verificarResposta(classOfButton) {
 
+    // VARIAVEL QUE CORRESPONDE A ALTERNATIVA QUE FOI ESCOLHIDA
     let button = document.querySelector(`.${classOfButton}`)
+    
+    // VARIAVEL QUE CORRESPONDE AO ÚLTIMO NÚMERO DA LISTA "allNumbers"
+    let lastDigit = allNumbers[allNumbers.length - 1]
+    console.log(lastDigit)
 
-    for (let answerIndex = 0; answerIndex < array.length; answerIndex++) {
-        
-        if (button.innerHTML == array[answerIndex].answer) {
-    
-            button.classList.add("respostaCerta")
-    
-        }
+    // SE ALTERNATIVA FOR A CORRETA, BOTÃO FICA VERDE
+    if (button.innerHTML == array[lastDigit].answer) {
+
+        button.classList.add("respostaCerta")
+
+        // SE ALTERNATIVA FOR A ERRADA, BOTÃO FICA VERMELHO
+    } else if (button.innerHTML != array[lastDigit].answer) {
+
+        button.classList.add("respostaErrada")
 
     }
-
-}
-
-function respostaCerta() {
-
-    // APARECE TELA DE RESPOSTA CERTA
-
-}
-
-function respostaErrada() {
-
-    // APARECE TELA DE RESPOSTA ERRADA
 
 }
