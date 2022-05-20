@@ -1,4 +1,4 @@
-let array = [
+let allVerses = [
 
     {
         verse: "Porque Deus tanto amou o mundo que deu o seu Filho Unigênito, para que todo o que nele crer não pereça, mas tenha a vida eterna.",
@@ -154,11 +154,11 @@ let allNumbers = []
 // FUNÇÃO QUE ADICIONA VERSO E AS ALTERNATIVAS
 function adicionarVerso() {
 
-    var numberRandom = Math.floor(Math.random() * array.length)
+    var numberRandom = Math.floor(Math.random() * allVerses.length)
 
-    // ENQUANTO A LISTA DE TODOS OS NÚMEROS ALEATORIOS FOR MENOR QUE 20,
+    // ENQUANTO A LISTA DE TODOS OS NÚMEROS ALEATORIOS (allNumbers) FOR MENOR QUE QUE A LISTA DE TODOS OS VERSOS (allVerses),
     // SERÁ ADICIONADA UM NOVO VERSO NA TELA
-    if (allNumbers.length < 20) {
+    if (allNumbers.length < allVerses.length) {
 
         while (true) {
 
@@ -172,7 +172,7 @@ function adicionarVerso() {
 
             if (allNumbers.includes(numberRandom)) {
 
-                numberRandom = Math.floor(Math.random() * array.length)
+                numberRandom = Math.floor(Math.random() * allVerses.length)
 
             }
 
@@ -184,12 +184,12 @@ function adicionarVerso() {
         // VERSO APARECE NA TELA
         let blocoVerso = document.getElementById("blocoVerso")
 
-        blocoVerso.innerHTML = array[numberRandom].verse
+        blocoVerso.innerHTML = allVerses[numberRandom].verse
 
         // ALTERNATIVAS APARECEM NA TELA
         let allButtons = document.querySelectorAll("#alternativa")
 
-        shuffleArray(array[numberRandom].options)
+        shuffleArray(allVerses[numberRandom].options)
 
         for (let index = 0; index < allButtons.length; index++) {
 
@@ -205,7 +205,7 @@ function adicionarVerso() {
 
             }
 
-            allButtons[index].innerHTML = array[numberRandom].options[index]
+            allButtons[index].innerHTML = allVerses[numberRandom].options[index]
 
         }
 
@@ -228,12 +228,12 @@ function verificarResposta(classOfButton) {
     console.log(lastDigit)
 
     // SE ALTERNATIVA FOR A CORRETA, BOTÃO FICA VERDE
-    if (button.innerHTML == array[lastDigit].answer) {
+    if (button.innerHTML == allVerses[lastDigit].answer) {
 
         button.classList.add("respostaCerta")
 
-        // SE ALTERNATIVA FOR A ERRADA, BOTÃO FICA VERMELHO
-    } else if (button.innerHTML != array[lastDigit].answer) {
+    // SE ALTERNATIVA FOR A ERRADA, BOTÃO FICA VERMELHO
+    } else if (button.innerHTML != allVerses[lastDigit].answer) {
 
         button.classList.add("respostaErrada")
 
