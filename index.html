@@ -12,7 +12,11 @@
 
         <title>Acerte o Verso</title>
 
-        <link rel="stylesheet" href="css/style.css">
+        <!-- LINK CSS -->
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/sectionPlayGame.css">
+        <link rel="stylesheet" href="css/container.css">
+        <link rel="stylesheet" href="css/sectioProximo.css">
 
         <script src="js/main.js"></script>
 
@@ -20,9 +24,9 @@
 
     <body>
 
-        <section>
+        <section id="sectionPlayGame">
 
-            <!-- <button id="comecar">COMEÇAR</button> -->
+            <button id="play" onclick="playGame()">COMEÇAR</button>
 
         </section>
 
@@ -42,11 +46,11 @@
 
             </section>
 
-            <section class="sectioProximo">
+        </section>
+        
+        <section class="sectioProximo">
 
-                <button onclick="adicionarVerso()">PROXIMO</button>
-
-            </section>
+            <button id="buttonNext" onclick="adicionarVerso()">PROXIMO</button>
 
         </section>
         

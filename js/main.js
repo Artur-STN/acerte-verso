@@ -232,11 +232,23 @@ function verificarResposta(classOfButton) {
 
         button.classList.add("respostaCerta")
 
+
+
     // SE ALTERNATIVA FOR A ERRADA, BOTÃO FICA VERMELHO
     } else if (button.innerHTML != allVerses[lastDigit].answer) {
 
         button.classList.add("respostaErrada")
 
+        box.disabled = true
+
     }
 
+}
+
+function playGame() {
+    
+    document.getElementById('sectionPlayGame').classList.add("sectionClose")
+
+    adicionarVerso()
+    
 }

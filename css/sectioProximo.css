@@ -1,0 +1,28 @@
+section.sectioProximo button#buttonNext {
+
+    background: #23395B;
+    color: white;
+
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+    
+    border: 1px solid;
+    border-radius: 10px;
+    
+    padding: 0.5rem 1rem;
+
+    transition: 0.2s;
+
+    cursor: pointer;
+
+}
+
+section.sectioProximo button#buttonNext:hover {
+
+    background: white;
+    color: #23395B;
+    
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing: 0.5rem;
+
+}
