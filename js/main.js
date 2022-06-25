@@ -219,7 +219,7 @@ function adicionarVerso() {
 
     } else {
 
-        alert("ISSO É TUDO PESSOAL!")
+        document.getElementById("acabou").style.left = "0"
 
     }
 
