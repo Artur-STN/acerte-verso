@@ -138,6 +138,13 @@ let allVerses = [
         options: ["Filemon 1:25", "Tito 1:1", "Ageu 2:10"],
         answer: "Filemon 1:25"
 
+    },
+
+    {
+        verse: "Vós, porém, sois raça eleita, sacerdócio real, nação santa, povo de propriedade exclusiva de Deus, a fim de proclamardes as virtudes daquele que vos chamou das trevas para a sua maravilhosa luz;",
+        options: ["1 Pedro 2:9", "1 Pedro 9:2", "1 Pedro 2:9"],
+        answer: "1 Pedro 2:9"
+
     }
 
 ]
@@ -156,7 +163,8 @@ function adicionarVerso() {
 
     var numberRandom = Math.floor(Math.random() * allVerses.length)
 
-    // ENQUANTO A LISTA DE TODOS OS NÚMEROS ALEATORIOS (allNumbers) FOR MENOR QUE QUE A LISTA DE TODOS OS VERSOS (allVerses),
+    // ENQUANTO A LISTA DE TODOS OS NÚMEROS ALEATORIOS (allNumbers)
+    // FOR MENOR QUE QUE A LISTA DE TODOS OS VERSOS (allVerses),
     // SERÁ ADICIONADA UM NOVO VERSO NA TELA
     if (allNumbers.length < allVerses.length) {
 
@@ -231,8 +239,6 @@ function verificarResposta(classOfButton) {
     if (button.innerHTML == allVerses[lastDigit].answer) {
 
         button.classList.add("respostaCerta")
-
-
 
     // SE ALTERNATIVA FOR A ERRADA, BOTÃO FICA VERMELHO
     } else if (button.innerHTML != allVerses[lastDigit].answer) {
